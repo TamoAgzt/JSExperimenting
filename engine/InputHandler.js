@@ -1,27 +1,19 @@
-// let currentKey = null;
-// let positionX = GameConsts.Canvas.width / 2;
-// let positionY = GameConsts.Canvas.height / 2;
+let currentKey = null;
 
-async function CheckInput(positionX, positionY) {
-  const data = await InitializeJSONData();
-  let currentKey = null;
+function HandleKeyDown(event, playerSpeed) {
+  currentKey = event.keyCode;
+}
 
-  $(document).on('keydown', function (event) {
-    currentKey = event.keyCode;
-    console.log('Key pressed:', event.key);
-    console.log('Key code:', event.keyCode);
-  });
+function HandleKeyUp() {
+  currentKey = null;
+}
 
-  $(document).on('keyup', function (event) {
-    currentKey = null;
-    console.log('Key released:', event.key);
-  });
+function CheckInput(positionX, positionY, playerSpeed) {
+  if (currentKey === 65) positionX -= playerSpeed; // A
+  if (currentKey === 68) positionX += playerSpeed; // D
+  if (currentKey === 87) positionY -= playerSpeed; // W
+  if (currentKey === 83) positionY += playerSpeed; // S
+  if (currentKey === 32) positionY += 10; // Space
 
-  if (currentKey === 65) positionX -= playerSpeed;
-  if (currentKey === 68) positionX += data.GameConsts.Player.playerSpeed;
-  if (currentKey === 87) positionY -= playerSpeed;
-  if (currentKey === 83) positionY += playerSpeed;
-  if (currentKey === 32) positionY += 10;
-
-  return positionX, positionY;
+  return { positionX, positionY };
 }

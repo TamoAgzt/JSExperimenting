@@ -1,9 +1,8 @@
 // Handle Collisions
-async function CheckCollision(positionX, positionY) {
-  const data = await InitializeJSONData();
+function CheckCollision(positionX, positionY, canvasWidth, canvasHeight) {
   // Check for map edge
-  positionX = Math.min(Math.max(positionX, 0), data.GameConsts.Canvas.width);
-  positionY = Math.min(Math.max(positionY, 0), data.GameConsts.Canvas.height);
+  positionX = Math.min(Math.max(positionX, 0), canvasWidth);
+  positionY = Math.min(Math.max(positionY, 0), canvasHeight);
 
-  return positionX, positionY;
+  return { positionX, positionY };
 }

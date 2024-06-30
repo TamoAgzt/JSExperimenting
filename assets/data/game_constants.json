@@ -5,6 +5,6 @@
   },
   "Player": {
     "playerColor": "red",
-    "playerSpeed": 1
+    "playerSpeed": 3
   }
 }

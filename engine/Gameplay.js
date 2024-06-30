@@ -1,6 +1,8 @@
 async function ShowCanvas() {
   const data = await InitializeJSONData();
 
+  const playerSpeed = data.GameConsts.Player.playerSpeed;
+
   const $canvas = $('<canvas>')
     .attr({
       id: 'myCanvas',
@@ -16,11 +18,22 @@ async function ShowCanvas() {
   let positionX = canvas.width / 2;
   let positionY = canvas.height / 2;
 
-  function update() {
-    // Handle input
-    CheckInput(positionX, positionY);
+  $(document).on('keydown', function (event) {
+    HandleKeyDown(event, playerSpeed);
+  });
 
-    CheckCollision(positionX, positionY);
+  $(document).on('keyup', function () {
+    HandleKeyUp();
+  });
+
+  function Update() {
+    ({ positionX, positionY } = CheckInput(positionX, positionY, playerSpeed));
+    ({ positionX, positionY } = CheckCollision(
+      positionX,
+      positionY,
+      data.GameConsts.Canvas.width,
+      data.GameConsts.Canvas.height
+    ));
 
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = data.GameConsts.Player.playerColor;
@@ -28,7 +41,7 @@ async function ShowCanvas() {
     context.arc(positionX, positionY, 5, 0, Math.PI * 2);
     context.fill();
 
-    requestAnimationFrame(update);
+    requestAnimationFrame(Update);
   }
-  update();
+  Update();
 }
