@@ -1,0 +1,10 @@
+{
+  "Canvas": {
+    "width": 800,
+    "height": 600
+  },
+  "Player": {
+    "playerColor": "red",
+    "playerSpeed": 1
+  }
+}
