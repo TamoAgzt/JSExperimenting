@@ -23,7 +23,8 @@ async function InitializeJSONData() {
   const jsonData = {};
   const files = [
     { alias: 'Test', path: './assets/data/test.json' },
-    { alias: 'GameConsts', path: './assets/data/game_constants.json' }
+    { alias: 'GameConsts', path: './assets/data/game_constants.json' },
+    { alias: 'Lang', path: './assets/data/Languages.json' }
   ];
   for (const file of files) {
     const { alias, data } = await LoadJSONFiles(file.alias, file.path);

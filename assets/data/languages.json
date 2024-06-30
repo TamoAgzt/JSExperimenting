@@ -1,0 +1,83 @@
+{
+  "NL": {
+    "langCheck": "Nederlands",
+    "Headers": {
+      "Title1": "Titel1",
+      "Title2": "Titel2",
+      "AboutMe": "Over Mij",
+      "SoftwareDevelopment": "Software Ontwikkeling",
+      "Internship": "Stage",
+      "GameDevelopment": "Game Ontwikkeling",
+      "OwnMusic": "Eigen muziek",
+      "OwnDrawings": "Eigen tekeningen"
+    },
+    "Contents": {
+      "AboutMe": "Mijn naam is WAT",
+      "MostExperience": "Ik heb tot nu toe het meest met C#, python, JavaScript en PHP gewerkt. Hieronder staan een paar projecten:"
+    },
+    "Buttons": {
+      "Save": "Opslaan",
+      "Cancel": "Annuleren",
+      "Back": "Terug",
+      "Start": "Beginnen",
+      "Play": "Afspelen",
+      "Pause": "Pauze",
+      "Options": "Opties",
+      "Settings": "Instellingen"
+    }
+  },
+  "EN": {
+    "langCheck": "English",
+    "Headers": {
+      "Title1": "Title1",
+      "Title2": "Title2",
+      "AboutMe": "About Me",
+      "SoftwareDevelopment": "Software Development",
+      "Internship": "Internship",
+      "GameDevelopment": "GameDevelopment",
+      "OwnMusic": "Own Music",
+      "OwnDrawings": "Own Drawings"
+    },
+    "Contents": {
+      "AboutMe": "My name is WHAT",
+      "MostExperience": "Most of my experience so far is in C#, python, JavaScript and PHP. Below are some of my projects:"
+    },
+    "Buttons": {
+      "Save": "Save",
+      "Cancel": "Cancel",
+      "Back": "Back",
+      "Start": "Start",
+      "Play": "Play",
+      "Pause": "Pause",
+      "Options": "Options",
+      "Settings": "Settings"
+    }
+  },
+  "HU": {
+    "langCheck": "Magyar",
+    "Headers": {
+      "Title1": "Cím1",
+      "Title2": "Cím2",
+      "AboutMe": "Rólam",
+      "SoftwareDevelopment": "Szoftver Fejlesztés",
+      "Internship": "Tanuló meló",
+      "GameDevelopment": "Játék Fejlesztés",
+      "OwnMusic": "Saját zene",
+      "OwnDrawings": "Saját Rajzok"
+    },
+    "Contents": {
+      "AboutMe": "A nevem MI",
+      "MostExperience": "Eddig legtöbbet C#-al, python-al, JavaScript-el és PHP-val dolgoztam. Itt lent talál néhány projektet tőllem:"
+    },
+    "Buttons": {
+      "Save": "Mentés",
+      "Cancel": "Mégse",
+      "Back": "Vissza",
+      "Start": "Kezdés",
+      "Play": "Lejátszás",
+      "Pause": "Szünet",
+      "Options": "Opciók",
+      "Settings": "Beállítások"
+    }
+  }
+}
