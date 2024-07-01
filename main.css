@@ -1,3 +1,11 @@
+/* #region Setup */
+:root {
+  --tag-1: rgb(236, 181, 231);
+  --tag-2: rgb(190, 184, 245);
+  --tag-3: rgb(181, 216, 236);
+  --tag-4: rgb(181, 236, 206);
+}
+
 body {
   margin: 0;
   font-family: Gotham Rounded, sans-serif;
