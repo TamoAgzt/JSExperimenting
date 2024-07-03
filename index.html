@@ -4,28 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="tgl/Functions.js"></script>
     <script src="engine/Gameplay.js"></script>
     <script src="engine/CollisionHandler.js"></script>
     <script src="engine/InputHandler.js"></script>
+    <script src="tgl/_required/Functions.js"></script>
     <script src="tgl/classes/CustomElements/UIComponents.js" defer></script>
+    <script src="tgl/classes/Langer/Langer.js" defer></script>
+
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="tgl/classes/CustomElements/UIComponents.css" />
   </head>
   <body>
-    <!-- <div class="language-options">
-      <input type="radio" id="NL" name="languageCode" value="NL" checked />
-      <input type="radio" id="EN" name="languageCode" value="EN" />
-      <input type="radio" id="HU" name="languageCode" value="HU" />
-
-      <label for="NL">nl/taal</label>
-      <label for="EN">en/language</label>
-      <label for="HU">hu/nyelv</label>
-    </div> -->
-
+    <!-- <tgl-language-menu languages="en hu de nl fr ru"></tgl-language-menu> -->
     <tgl-tag-bar>
       <tgl-tag img="assets/Discordicon.png" tag-type="docs"></tgl-tag>
       <tgl-tag img="assets/Spotifyicon.png" tag-type="script"></tgl-tag>
@@ -33,20 +23,10 @@
       <tgl-tag img="assets/Unityicon.png" tag-type="tools"></tgl-tag>
     </tgl-tag-bar>
     <br />
-    <tgl-button size="2"></tgl-button>
 
-    <!-- LANGUAGE STUFF -->
-    <!--  
-    <h1>Title1</h1>
-    <p>MostExperience</p>
-    <br />
-    <h1>AboutMe</h1>
-    <p>AboutMe</p>
-    <br />
-    <h1>Title2</h1>
-    <p>MostExperience</p>
-    <br /><br /><br /> -->
-    <!-- <button id="createCanvasOne">Play</button> -->
+    <!-- <tgl-button fill="danger" shape="square"></tgl-button> -->
+
+    <tgl-slider size="2"></tgl-slider>
   </body>
   <script src="main.js"></script>
 </html>
