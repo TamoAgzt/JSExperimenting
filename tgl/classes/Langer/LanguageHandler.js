@@ -1,25 +1,42 @@
 async function LanguageCheck() {
   const data = await InitializeJSONData();
-  var lang = sessionStorage.getItem('lang');
+  let lang = sessionStorage.getItem('lang');
 
-  // Set the default language based on session storage, if there is nothing, use the first language available
   if (lang) {
-    $('input[name=languageCode][value=' + lang + ']').prop('checked', true);
+    const radioButton = document.querySelector(
+      'input[name=languageCode][value=' + lang + ']'
+    );
+    if (radioButton) {
+      radioButton.checked = true;
+    }
   } else {
-    lang = $('input[name=languageCode]:checked').val();
+    const firstRadioButton = document.querySelector('input[name=languageCode]');
+    if (firstRadioButton) {
+      firstRadioButton.checked = true;
+      lang = firstRadioButton.value;
+    }
   }
 
-  // Perform updateContent when the language changes
+  if (!lang) {
+    console.error('No language selected or available.');
+    return;
+  }
+
   $('input[name=languageCode]').change(function () {
     lang = $('input[name=languageCode]:checked').val();
-    // Set the new language in session storage
     sessionStorage.setItem('lang', lang);
     UpdateContent(data, lang);
   });
+
   UpdateContent(data, lang);
 }
 
 function UpdateContent(data, lang) {
+  if (!data.Lang[lang]) {
+    console.error('No data found for lang:', lang);
+    return;
+  }
+
   // Update the headers
   $('h1').each(function (index) {
     var originalText = $(this).text().trim();
@@ -38,5 +55,5 @@ function UpdateContent(data, lang) {
     $(this).text(data.Lang[lang].Buttons[originalText] || originalText);
   });
 
-  console.log(data.Lang[lang].Headers.Title1);
+  // console.log(data.Lang[lang].Headers.Title1);
 }

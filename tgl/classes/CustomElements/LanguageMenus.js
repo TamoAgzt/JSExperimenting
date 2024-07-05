@@ -4,7 +4,7 @@ class LanguageMenus extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('Language menu element added to page.');
+    // console.log('Language menu element added to page.');
     // Create a shadow root
     const shadow = this.attachShadow({ mode: 'open' });
 
@@ -28,25 +28,23 @@ class LanguageMenus extends HTMLElement {
       input.setAttribute('class', 'language-button');
       label.setAttribute('class', 'language-label');
 
+      label.addEventListener('click', () => {
+        input.checked = true;
+        input.dispatchEvent(new Event('change'));
+      });
+
       wrapper.appendChild(label);
       wrapper.appendChild(input);
     });
 
-    /* <input type="radio" id="NL" name="languageCode" value="NL" checked />
-<input type="radio" id="EN" name="languageCode" value="EN" />
-<input type="radio" id="HU" name="languageCode" value="HU" />
-<label for="NL">nl/taal</label>
-<label for="EN">en/language</label>
-<label for="HU">hu/nyelv</label> */
-
     // Create some CSS to apply to the shadow dom
     const style = document.createElement('style');
-    console.log(style.isConnected);
+    // console.log(style.isConnected);
 
     style.textContent = `
       .language-options {
         position: relative;
-        width: 10%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         margin: 10px;
@@ -72,7 +70,7 @@ class LanguageMenus extends HTMLElement {
       }
     `;
     shadow.appendChild(style);
-    console.log(style.isConnected);
+    // console.log(style.isConnected);
     shadow.appendChild(wrapper);
   }
 }

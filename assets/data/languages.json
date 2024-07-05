@@ -1,46 +1,13 @@
 {
-  "NL": {
-    "langCheck": "Nederlands",
-    "Headers": {
-      "Title1": "Titel1",
-      "Title2": "Titel2",
-      "AboutMe": "Over Mij",
-      "SoftwareDevelopment": "Software Ontwikkeling",
-      "Internship": "Stage",
-      "GameDevelopment": "Game Ontwikkeling",
-      "OwnMusic": "Eigen muziek",
-      "OwnDrawings": "Eigen tekeningen"
-    },
-    "Contents": {
-      "AboutMe": "Mijn naam is WAT",
-      "MostExperience": "Ik heb tot nu toe het meest met C#, python, JavaScript en PHP gewerkt. Hieronder staan een paar projecten:"
-    },
-    "Buttons": {
-      "Save": "Opslaan",
-      "Cancel": "Annuleren",
-      "Back": "Terug",
-      "Start": "Beginnen",
-      "Play": "Afspelen",
-      "Pause": "Pauze",
-      "Options": "Opties",
-      "Settings": "Instellingen"
-    }
-  },
   "EN": {
-    "langCheck": "English",
     "Headers": {
-      "Title1": "Title1",
-      "Title2": "Title2",
-      "AboutMe": "About Me",
-      "SoftwareDevelopment": "Software Development",
-      "Internship": "Internship",
-      "GameDevelopment": "GameDevelopment",
-      "OwnMusic": "Own Music",
-      "OwnDrawings": "Own Drawings"
+      "Main": "Super cool test site",
+      "Cypress": "Cypress testing"
     },
     "Contents": {
-      "AboutMe": "My name is WHAT",
-      "MostExperience": "Most of my experience so far is in C#, python, JavaScript and PHP. Below are some of my projects:"
+      "Purpose": "Use this website to play around with cypress",
+      "AboutCy": "Cypress is a JavaScript framework used for end-to-end testing.",
+      "PressMe": "Press me to see if I can toggle!"
     },
     "Buttons": {
       "Save": "Save",
@@ -50,24 +17,43 @@
       "Play": "Play",
       "Pause": "Pause",
       "Options": "Options",
-      "Settings": "Settings"
+      "Settings": "Settings",
+      "Login": "Log in",
+      "Logout": "Log out"
+    }
+  },
+  "NL": {
+    "Headers": {
+      "Main": "Super coole test site",
+      "Cypress": "Cypress testing"
+    },
+    "Contents": {
+      "Purpose": "Gebruik dit website om rond te spelen met Cypress",
+      "AboutCy": "Cypress is een JavaScript framework gebruikt voor end-to-end testing.",
+      "PressMe": "Druk mij om te kijken of ik kan schakelen!"
+    },
+    "Buttons": {
+      "Save": "Opslaan",
+      "Cancel": "Annuleren",
+      "Back": "Terug",
+      "Start": "Beginnen",
+      "Play": "Afspelen",
+      "Pause": "Pauzeren",
+      "Options": "Opties",
+      "Settings": "Instellingen",
+      "Login": "Inloggen",
+      "Logout": "Uitloggen"
     }
   },
   "HU": {
-    "langCheck": "Magyar",
     "Headers": {
-      "Title1": "Cím1",
-      "Title2": "Cím2",
-      "AboutMe": "Rólam",
-      "SoftwareDevelopment": "Szoftver Fejlesztés",
-      "Internship": "Tanuló meló",
-      "GameDevelopment": "Játék Fejlesztés",
-      "OwnMusic": "Saját zene",
-      "OwnDrawings": "Saját Rajzok"
+      "Main": "Szuper cool teszt site",
+      "Cypress": "Cypress tesztelés"
     },
     "Contents": {
-      "AboutMe": "A nevem MI",
-      "MostExperience": "Eddig legtöbbet C#-al, python-al, JavaScript-el és PHP-val dolgoztam. Itt lent talál néhány projektet tőllem:"
+      "Purpose": "Használd ezt a weboldalt arra hogz játsz Cypress-el.",
+      "AboutCy": "Cypress egy end-to-end teszelésre készült JavaScript framework.",
+      "PressMe": "Nyomj meg hogy látsd tudok-e változni!"
     },
     "Buttons": {
       "Save": "Mentés",
@@ -77,7 +63,9 @@
       "Play": "Lejátszás",
       "Pause": "Szünet",
       "Options": "Opciók",
-      "Settings": "Beállítások"
+      "Settings": "Beállítások",
+      "Login": "Bejelentkezés",
+      "Logout": "Kijelentkezés"
     }
   }
 }

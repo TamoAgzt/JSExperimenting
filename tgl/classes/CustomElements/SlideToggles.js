@@ -32,7 +32,7 @@ class SlideToggles extends HTMLElement {
     if (this.hasAttribute('shape')) {
       shape = this.getAttribute('shape');
     } else {
-      // rounded, square, circle
+      // rounded, square
       shape = 'rounded';
     }
     let size;

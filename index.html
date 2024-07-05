@@ -10,12 +10,12 @@
     <script src="engine/InputHandler.js"></script>
     <script src="tgl/_required/Functions.js"></script>
     <script src="tgl/classes/CustomElements/UIComponents.js" defer></script>
-    <script src="tgl/classes/Langer/Langer.js" defer></script>
+    <!-- <script src="tgl/classes/Langer/Langer.js" defer></script> -->
 
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <!-- <tgl-language-menu languages="en hu de nl fr ru"></tgl-language-menu> -->
+    <tgl-language-menu languages="en hu de nl fr ru"></tgl-language-menu>
     <tgl-tag-bar>
       <tgl-tag img="assets/Discordicon.png" tag-type="docs"></tgl-tag>
       <tgl-tag img="assets/Spotifyicon.png" tag-type="script"></tgl-tag>
@@ -24,9 +24,21 @@
     </tgl-tag-bar>
     <br />
 
-    <!-- <tgl-button fill="danger" shape="square"></tgl-button> -->
+    <!-- <tgl-button fill="danger" shape="square" onclick="SAYHI()"></tgl-button> -->
 
-    <tgl-slider size="2"></tgl-slider>
+    <h1>Main</h1>
+    <p>Purpose</p>
+    <br />
+    <h1>Cypress</h1>
+    <p>AboutCy</p>
+
+    <tgl-slider
+      size="2"
+      shape="square"
+      min="0"
+      max="100"
+      value="30"
+    ></tgl-slider>
   </body>
   <script src="main.js"></script>
 </html>

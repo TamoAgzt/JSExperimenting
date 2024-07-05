@@ -7,24 +7,10 @@ class Sliders extends HTMLElement {
     console.log('Slider element added to page.');
     // Create a shadow root
     const shadow = this.attachShadow({ mode: 'open' });
-    const wrapper = document.createElement('div');
-    const filler = document.createElement('div');
-    const handle = document.createElement('div');
+    const wrapper = document.createElement('input');
 
     wrapper.setAttribute('name', 'Slider box');
-    filler.setAttribute('name', 'Slider filler');
-    handle.setAttribute('name', 'Slider handle');
-
-    wrapper.addEventListener('mousedown', (event) => {
-      console.log(event.clientX);
-      this.addEventListener('mousemove', (event) => {
-        console.log(event.clientX);
-      });
-    });
-    wrapper.addEventListener('mouseup', (event) => {
-      console.log(event.clientX);
-      this.removeEventListener('mousemove');
-    });
+    wrapper.setAttribute('type', 'range');
 
     let minValue, maxValue, currentValue;
     if (this.hasAttribute('min')) {
@@ -32,29 +18,25 @@ class Sliders extends HTMLElement {
     } else {
       minValue = '0';
     }
+    wrapper.setAttribute('min', minValue);
     if (this.hasAttribute('max')) {
       maxValue = this.getAttribute('max');
     } else {
       maxValue = '100';
     }
-    if (this.hasAttribute('current')) {
-      currentValue = this.getAttribute('current');
+    wrapper.setAttribute('max', maxValue);
+    if (this.hasAttribute('value')) {
+      currentValue = this.getAttribute('value');
     } else {
       currentValue = '50';
     }
+    wrapper.setAttribute('value', currentValue);
     let barShape;
-    if (this.hasAttribute('bar-shape')) {
-      barShape = this.getAttribute('bar-shape');
+    if (this.hasAttribute('shape')) {
+      barShape = this.getAttribute('shape');
     } else {
       // rounded, square
       barShape = 'rounded';
-    }
-    let handleShape;
-    if (this.hasAttribute('handle-shape')) {
-      handleShape = this.getAttribute('handle-shape');
-    } else {
-      // rounded, square
-      handleShape = 'rounded';
     }
     let size;
     if (this.hasAttribute('size')) {
@@ -70,7 +52,6 @@ class Sliders extends HTMLElement {
     }
 
     wrapper.setAttribute('class', 'slider ' + barShape);
-    handle.setAttribute('class', handleShape);
 
     // Create some CSS to apply to the shadow dom
     const style = document.createElement('style');
@@ -85,9 +66,9 @@ class Sliders extends HTMLElement {
     style.textContent =
       `
       .slider {
-        position: inline-block;
-        margin: 0;
-        padding: 0;
+        cursor: pointer;
+  -webkit-appearance: none;
+        /*position: inline-block;*/
         width: ` +
       calculatedWidth +
       `px;
@@ -95,8 +76,6 @@ class Sliders extends HTMLElement {
       calculatedHeight +
       `px;
         border:1px solid black;
-        align-items: center;
-        cursor: pointer;
       }
       .filler{
         background:` +
@@ -107,27 +86,44 @@ class Sliders extends HTMLElement {
       currentValue +
       `;
       }
-      handle{
-        cursor:pointer;
-        position:relative;
-        width: ` +
-      calculatedHeight +
-      `px;
-        height: ` +
-      calculatedHeight +
-      `px;
-        margin-top:0;
-        margin-left:` +
-      currentValue +
-      `;
-      background:red;
-      }
+      
       .slider.rounded{
         border-radius: calc(` +
       calculatedWidth +
       `px * ` +
       roundedScale +
       `);
+      
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+        width: ` +
+      calculatedHeight +
+      `px;
+        height: ` +
+      calculatedHeight +
+      `px;
+  background: #red;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
       handle.rounded{
         width: cal(` +
       calculatedHeight +
@@ -143,8 +139,6 @@ class Sliders extends HTMLElement {
     shadow.appendChild(style);
     console.log(style.isConnected);
     shadow.appendChild(wrapper);
-    wrapper.appendChild(filler);
-    wrapper.appendChild(handle);
   }
 }
 customElements.define('tgl-slider', Sliders);

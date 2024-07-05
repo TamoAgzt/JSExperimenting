@@ -7,8 +7,3 @@
 
 //   ShowCanvas();
 // });
-
-// Perform updateContent function when page loads
-$(document).ready(async function () {
-  // STAY
-});
