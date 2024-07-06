@@ -3,14 +3,15 @@
 //   initData = await InitializeJSONData();
 //   console.log(data.Icons.Icon.tools.vsc);
 // });
+import Logger from '../Debug/Logger.js';
+const logger = new Logger();
+
 class Tags extends HTMLElement {
   constructor() {
     super();
   }
 
   async connectedCallback() {
-    // const data = initData();
-    // console.log('Tag element added to page.');
     // Create a shadow root
     const shadow = this.attachShadow({ mode: 'open' });
 
@@ -44,9 +45,15 @@ class Tags extends HTMLElement {
 
     // icon.innerHTML = data.Icons.Icon.tagType.iconUrl;
 
+    logger.Log(
+      'tgl/classes/CustomElements/Tags.Tags: Tag element added to page: ' +
+        iconUrl +
+        ' | ' +
+        tagType
+    );
+
     // Create some CSS to apply to the shadow dom
     const style = document.createElement('style');
-    // console.log(style.isConnected);
 
     const defWidth = 60;
     const defHeight = 30;
@@ -86,7 +93,9 @@ class Tags extends HTMLElement {
       }
     `;
     shadow.appendChild(style);
-    // console.log(style.isConnected);
+    logger.Log(
+      'tgl/classes/CustomElements/Tags.Tags: Tag style: ' + style.isConnected
+    );
     shadow.appendChild(wrapper);
     wrapper.appendChild(icon);
   }
@@ -98,7 +107,9 @@ class TagBars extends HTMLElement {
     super();
   }
   connectedCallback() {
-    // console.log('Tag bar element added to page.');
+    logger.Log(
+      'tgl/classes/CustomElements/Tags.TagBars: Tag bar element added to page.'
+    );
     // Create a shadow root
     // const shadow = this.attachShadow({ mode: 'open' });
     // shadow.appendChild(stylingHelp.content.cloneNode(true));

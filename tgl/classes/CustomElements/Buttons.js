@@ -1,3 +1,6 @@
+import Logger from '../Debug/Logger.js';
+const logger = new Logger();
+
 class Buttons extends HTMLElement {
   // static observedAttributes = ['color', 'size'];
 
@@ -5,7 +8,6 @@ class Buttons extends HTMLElement {
     super();
   }
   connectedCallback() {
-    console.log('Button element added to page.');
     // Create a shadow root
     const shadow = this.attachShadow({ mode: 'open' });
 
@@ -81,6 +83,13 @@ class Buttons extends HTMLElement {
 
     // const img = document.createElement('img');
     // img.src = imgUrl;
+
+    logger.Log(
+      'tgl/classes/CustomElements/Buttons.Buttons: Button element added to page: ' +
+        content +
+        ' | ' +
+        type
+    );
 
     // Create some CSS to apply to the shadow dom
     const style = document.createElement('style');
@@ -160,7 +169,10 @@ class Buttons extends HTMLElement {
       }
     `;
     shadow.appendChild(style);
-    console.log(style.isConnected);
+    logger.Log(
+      'tgl/classes/CustomElements/Buttons.Buttons: Button style: ' +
+        style.isConnected
+    );
     shadow.appendChild(button);
     button.appendChild(text);
   }

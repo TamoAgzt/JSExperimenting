@@ -1,10 +1,12 @@
+import Logger from '../Debug/Logger.js';
+const logger = new Logger();
+
 class LanguageMenus extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
-    // console.log('Language menu element added to page.');
     // Create a shadow root
     const shadow = this.attachShadow({ mode: 'open' });
 
@@ -36,10 +38,13 @@ class LanguageMenus extends HTMLElement {
       wrapper.appendChild(label);
       wrapper.appendChild(input);
     });
+    logger.Log(
+      'tgl/classes/CustomElements/LanguageMenus.LanguageMenus: Language menu element added to page: ' +
+        languages
+    );
 
     // Create some CSS to apply to the shadow dom
     const style = document.createElement('style');
-    // console.log(style.isConnected);
 
     style.textContent = `
       .language-options {
@@ -70,7 +75,10 @@ class LanguageMenus extends HTMLElement {
       }
     `;
     shadow.appendChild(style);
-    // console.log(style.isConnected);
+    logger.Log(
+      'tgl/classes/CustomElements/LanguageMenus.LanguageMenus: Language menu style: ' +
+        style.isConnected
+    );
     shadow.appendChild(wrapper);
   }
 }

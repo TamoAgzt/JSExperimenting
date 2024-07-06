@@ -1,10 +1,12 @@
+import Logger from '../Debug/Logger.js';
+const logger = new Logger();
+
 class SlideToggles extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
-    console.log('Slide toggle element added to page.');
     // Create a shadow root
     const shadow = this.attachShadow({ mode: 'open' });
 
@@ -44,6 +46,10 @@ class SlideToggles extends HTMLElement {
 
     wrapper.setAttribute('class', 'slide-toggle ' + shape);
     input.setAttribute('class', shape);
+
+    logger.Log(
+      'tgl/classes/CustomElements/SlideToggles.SlideToggles: Slide toggle element added to page.'
+    );
 
     // Create some CSS to apply to the shadow dom
     const style = document.createElement('style');
@@ -99,7 +105,10 @@ class SlideToggles extends HTMLElement {
     `;
 
     shadow.appendChild(style);
-    console.log(style.isConnected);
+    logger.Log(
+      'tgl/classes/CustomElements/SlideToggles.SlideToggles: Slide toggle style: ' +
+        style.isConnected
+    );
     shadow.appendChild(wrapper);
     wrapper.appendChild(input);
   }

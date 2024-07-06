@@ -1,3 +1,6 @@
+import Logger from '../Debug/Logger.js';
+const logger = new Logger();
+
 async function LanguageCheck() {
   const data = await InitializeJSONData();
   let lang = sessionStorage.getItem('lang');
@@ -19,6 +22,9 @@ async function LanguageCheck() {
 
   if (!lang) {
     console.error('No language selected or available.');
+    logger.Log(
+      'ERROR: tgl/classes/Langer/LanguageHandler.LanguageCheck(): No language selected or available.'
+    );
     return;
   }
 
@@ -32,8 +38,16 @@ async function LanguageCheck() {
 }
 
 function UpdateContent(data, lang) {
+  logger.Log(
+    'tgl/classes/Langer/LanguageHandler.UpdateContent(): Updating language to: ' +
+      lang
+  );
   if (!data.Lang[lang]) {
     console.error('No data found for lang:', lang);
+    logger.Log(
+      'ERROR: tgl/classes/Langer/LanguageHandler.UpdateContent(): No data found for lang:',
+      lang
+    );
     return;
   }
 
@@ -54,6 +68,4 @@ function UpdateContent(data, lang) {
     var originalText = $(this).text().trim();
     $(this).text(data.Lang[lang].Buttons[originalText] || originalText);
   });
-
-  // console.log(data.Lang[lang].Headers.Title1);
 }
